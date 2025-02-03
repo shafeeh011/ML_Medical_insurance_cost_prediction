@@ -4,6 +4,9 @@ import pickle
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
+import warnings
+
+warnings.filterwarnings('ignore')
 
 app = FastAPI()
 
@@ -48,3 +51,8 @@ def insurance_prediction(input_parameters: InsuranceInput):
         return {'predicted_insurance_cost': float(prediction[0])}
     except Exception as e:
         return {'error': str(e)}
+
+# WSGI Entry Point for Elastic Beanstalk
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
