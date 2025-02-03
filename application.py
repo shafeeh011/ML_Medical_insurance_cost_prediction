@@ -52,7 +52,7 @@ def insurance_prediction(input_parameters: InsuranceInput):
     except Exception as e:
         return {'error': str(e)}
 
-# WSGI Entry Point for Elastic Beanstalk
+# WSGI Entry Point for AWS Elastic Beanstalk
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)

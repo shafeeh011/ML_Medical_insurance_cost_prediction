@@ -2,7 +2,8 @@ import json
 import requests
 
 # Update the API endpoint for insurance prediction
-url = 'http://0.0.0.0:8000/insurance_prediction'
+#url = 'http://0.0.0.0:8000/insurance_prediction'
+url = 'http://127.0.0.1:8000/insurance_prediction'
 
 # Example input data for insurance cost prediction
 input_data = {
